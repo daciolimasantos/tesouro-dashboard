@@ -1,0 +1,31 @@
+name: Atualizar Dados do Tesouro
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # A cada hora
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Run pipeline
+        run: python scripts/run_pipeline.py --full
+        
+      - name: Commit and push if changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add data/processed/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Atualização automática $(date)"
+          git push
