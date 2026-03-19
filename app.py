@@ -634,9 +634,7 @@ st.markdown("""
 
 # Atualização automática
 if auto_refresh:
-time_since_update = (datetime.now() - ultima_atualizacao).total_seconds() / 60
-if time_since_update >= 60:
-st.cache_data.clear()
-st.rerun()
-            
-            
+    time_since_update = (datetime.now() - ultima_atualizacao).total_seconds() / 60
+        if time_since_update >= 60:
+            st.cache_data.clear()
+            st.rerun()
