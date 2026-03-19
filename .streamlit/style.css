@@ -1,0 +1,272 @@
+/* Estilo inspirado na Koenigsegg - Minimalista e Elegante */
+
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset e estilos globais */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* Cabeçalho principal - estilo Koenigsegg */
+.main-header {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    line-height: 1.1;
+}
+
+.main-header span {
+    font-weight: 600;
+    color: #1E1E1E;
+}
+
+/* Subtítulo */
+.sub-header {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.3px;
+}
+
+/* Cards de métricas - estilo Koenigsegg */
+.metric-card {
+    background-color: #F8F8F8;
+    padding: 1.8rem 1rem;
+    border-radius: 0;
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+    background-color: #F0F0F0;
+}
+
+.metric-card b {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: block;
+    margin-top: 0.5rem;
+    color: #000000;
+}
+
+/* Cards de oportunidades */
+.opportunity-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    padding: 2rem;
+    border-radius: 0;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.opportunity-card:hover {
+    border-color: #999999;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.opportunity-card h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.opportunity-card p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Níveis de alerta - sutis como no site da Koenigsegg */
+.alert-high {
+    color: #D42E2E;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.alert-medium {
+    color: #E68A2E;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.alert-low {
+    color: #2E8B57;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Abas - estilo minimalista */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 2rem;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666666;
+    padding: 0.5rem 0;
+    margin: 0;
+    transition: all 0.2s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #000000;
+    font-weight: 500;
+    border-bottom: 2px solid #000000;
+}
+
+/* Sidebar - clean */
+.css-1d391kg, .css-1wrcr25 {
+    background-color: #FFFFFF;
+    border-right: 1px solid #EAEAEA;
+}
+
+.sidebar-header {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.stButton button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.stButton button:hover {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+}
+
+/* Expanders */
+.streamlit-expanderHeader {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000000;
+    background-color: #F8F8F8;
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+}
+
+.streamlit-expanderContent {
+    border: none;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-left: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+/* Tabelas */
+.dataframe {
+    font-size: 0.9rem;
+    font-weight: 300;
+    border: none;
+}
+
+.dataframe th {
+    font-weight: 500;
+    color: #000000;
+    background-color: #F8F8F8;
+    border: none;
+    padding: 1rem;
+}
+
+.dataframe td {
+    border: none;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 0.8rem 1rem;
+}
+
+/* Gráficos Plotly */
+.js-plotly-plot {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    color: #999999;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    border-top: 1px solid #EAEAEA;
+}
+
+/* Links */
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #666666;
+    text-decoration: none;
+}
+
+/* Slider */
+.stSlider [data-baseweb="slider"] {
+    background-color: #EAEAEA;
+}
+
+.stSlider [data-baseweb="thumb"] {
+    background-color: #000000;
+    border: none;
+}
+
+/* Checkbox */
+.stCheckbox [data-baseweb="checkbox"] {
+    border-color: #CCCCCC;
+}
+
+/* Métricas */
+div[data-testid="metric-container"] {
+    background-color: #F8F8F8;
+    border: none;
+    border-radius: 0;
+    padding: 1.5rem;
+}
+
+div[data-testid="metric-container"] label {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #666666;
+}
+
+div[data-testid="metric-container"] div {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000000;
+}
