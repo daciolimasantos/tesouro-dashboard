@@ -298,7 +298,7 @@ with tab2:
     
     st.dataframe(
         df_display,
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
         column_config={
             "Score": st.column_config.NumberColumn(format="%.1f")
@@ -320,7 +320,7 @@ with tab2:
         }
     )
     fig.update_layout(height=500)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # TAB 3: Curva de Juros
 with tab3:
@@ -375,7 +375,7 @@ with tab3:
         hovermode='x unified'
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # Métricas da curva
     col1, col2, col3 = st.columns(3)
@@ -438,12 +438,12 @@ with tab4:
             title='Próximos Eventos'
         )
         fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
         
         # Tabela de eventos
         st.dataframe(
             df_eventos,
-            use_container_width=True,
+            width='stretch',
             hide_index=True,
             column_config={
                 "data": "Data",
@@ -454,7 +454,7 @@ with tab4:
         )
     else:
         st.info("Nenhum evento próximo detectado")
-        
+
 # TAB 5: Manual
 with tab5:
     st.markdown("## 📖 Manual do Usuário - Como Usar o Dashboard")
@@ -519,192 +519,188 @@ with tab5:
     with st.expander("📈 **Interpretando a Curva de Juros**"):
         st.markdown("""
         A curva de juros mostra a relação entre **prazo** e **taxa** dos títulos:
+        Taxa (%)
+↑
+│ ●─────────● Curva normal
+│ ● ● (quanto maior o prazo,
+│ ● ● maior a taxa)
+│ ● ●
+│ ● ●
+│ ● ●
+└─────────────────────────→ Prazo (dias)
+
+
+**O que observar:**
+- 📈 **Curva inclinada para cima**: Normal, mercado saudável
+- 📉 **Curva invertida**: Pode indicar expectativa de queda de juros
+- 📊 **Achatamento**: Incerteza no mercado
+
+**Áreas do gráfico:**
+- Área azul clara = faixa entre mínima e máxima
+- Linha azul escura = taxa média
+- Pontos = títulos individuais
+""")
+
+    with st.expander("📅 **Usando o Calendário de Eventos**"):
+        st.markdown("""
+    O calendário mostra dois tipos de eventos:
+
+    1. **Vencimentos** 📅
+    - Data em que o título será resgatado
+    - Você receberá o valor nominal
+    - Planeje o reinvestimento com antecedência
+
+    2. **Cupons** 💵
+    - Pagamentos semestrais de juros
+    - Ocorrem apenas em títulos com "Juros" no nome
+    - Valor creditado na sua conta
+
+    **Como usar:**
+    - Acompanhe os próximos 12 meses
+    - Planeje seu fluxo de caixa
+    - Identifique períodos com mais eventos
+    """)
+
+    with st.expander("⚙️ **Configurações e Filtros**"):
+    st.markdown("""
+    **Na barra lateral você pode:**
+
+    1. **🔄 Atualização automática**
+    - Mantenha ativado para dados sempre frescos
+    - Atualiza a cada 60 minutos
+
+    2. **🔍 Filtros**
+    - **Desconto mínimo**: Só mostra oportunidades acima deste valor
+    - **Mostrar vencidos**: Inclui títulos já vencidos na tabela
+
+    3. **🔄 Atualizar agora**
+    - Botão para forçar atualização manual
+
+    4. **📊 Ordenação**
+    - Na tabela, clique nas colunas para ordenar
+    - Use o seletor "Ordenar por" para classificação automática
+    """)
+
+    with st.expander("❓ **Perguntas Frequentes**"):
+
+    faq_data = [
+        ("**Os dados são reais?**", 
+        "O dashboard tenta coletar dados das APIs oficiais do Tesouro Direto e Banco Central. Se as APIs estiverem indisponíveis, usamos dados simulados realistas para manter o funcionamento."),
         
-                Taxa (%)
-        ↑
-        │ ●─────────● Curva normal
-        │ ● ● (quanto maior o prazo,
-        │ ● ● maior a taxa)
-        │ ● ●
-        │ ● ●
-        │ ● ●
-        └─────────────────────────→ Prazo (dias)
+        ("**Com que frequência os dados são atualizados?**", 
+        "A cada 60 minutos automaticamente. Você também pode clicar em 'Atualizar Agora' na barra lateral."),
+        
+        ("**Posso confiar nas oportunidades detectadas?**", 
+        "As oportunidades são baseadas em modelos matemáticos e análise de dados. Use como **ferramenta de apoio**, não como recomendação de investimento. Sempre consulte um assessor financeiro."),
+        
+        ("**O que é 'preço teórico'?**", 
+        "É o preço que o título 'deveria' ter baseado em modelos de fluxo de caixa descontado. Considera taxa atual, tempo até vencimento e, quando aplicável, cupons futuros."),
+        
+        ("**Por que alguns títulos têm 'N/A' no preço teórico?**", 
+        "Pode ocorrer para títulos muito atípicos ou quando há dados insuficientes para o cálculo. Nestes casos, focamos apenas nos dados observados de mercado."),
+        
+        ("**O dashboard funciona no celular?**", 
+        "Sim! O Streamlit é responsivo e se adapta a telas menores. Acesse pelo navegador do seu smartphone."),
+        
+        ("**É gratuito mesmo?**", 
+        "Sim! Este é um projeto open-source mantido pela comunidade. O código está disponível no GitHub para quem quiser contribuir ou customizar.")
+    ]
 
-
-        **O que observar:**
-        - 📈 **Curva inclinada para cima**: Normal, mercado saudável
-        - 📉 **Curva invertida**: Pode indicar expectativa de queda de juros
-        - 📊 **Achatamento**: Incerteza no mercado
-
-        **Áreas do gráfico:**
-        - Área azul clara = faixa entre mínima e máxima
-        - Linha azul escura = taxa média
-        - Pontos = títulos individuais
-        """)
-
-        with st.expander("📅 **Usando o Calendário de Eventos**"):
-        st.markdown("""
-        O calendário mostra dois tipos de eventos:
-
-        1. **Vencimentos** 📅
-        - Data em que o título será resgatado
-        - Você receberá o valor nominal
-        - Planeje o reinvestimento com antecedência
-
-        2. **Cupons** 💵
-        - Pagamentos semestrais de juros
-        - Ocorrem apenas em títulos com "Juros" no nome
-        - Valor creditado na sua conta
-
-        **Como usar:**
-        - Acompanhe os próximos 12 meses
-        - Planeje seu fluxo de caixa
-        - Identifique períodos com mais eventos
-        """)
-
-        with st.expander("⚙️ **Configurações e Filtros**"):
-        st.markdown("""
-        **Na barra lateral você pode:**
-
-        1. **🔄 Atualização automática**
-        - Mantenha ativado para dados sempre frescos
-        - Atualiza a cada 60 minutos
-
-        2. **🔍 Filtros**
-        - **Desconto mínimo**: Só mostra oportunidades acima deste valor
-        - **Mostrar vencidos**: Inclui títulos já vencidos na tabela
-
-        3. **🔄 Atualizar agora**
-        - Botão para forçar atualização manual
-
-        4. **📊 Ordenação**
-        - Na tabela, clique nas colunas para ordenar
-        - Use o seletor "Ordenar por" para classificação automática
-        """)
-
-        with st.expander("❓ **Perguntas Frequentes**"):
-
-        faq_data = [
-            ("**Os dados são reais?**", 
-            "O dashboard tenta coletar dados das APIs oficiais do Tesouro Direto e Banco Central. Se as APIs estiverem indisponíveis, usamos dados simulados realistas para manter o funcionamento."),
-            
-            ("**Com que frequência os dados são atualizados?**", 
-            "A cada 60 minutos automaticamente. Você também pode clicar em 'Atualizar Agora' na barra lateral."),
-            
-            ("**Posso confiar nas oportunidades detectadas?**", 
-            "As oportunidades são baseadas em modelos matemáticos e análise de dados. Use como **ferramenta de apoio**, não como recomendação de investimento. Sempre consulte um assessor financeiro."),
-            
-            ("**O que é 'preço teórico'?**", 
-            "É o preço que o título 'deveria' ter baseado em modelos de fluxo de caixa descontado. Considera taxa atual, tempo até vencimento e, quando aplicável, cupons futuros."),
-            
-            ("**Por que alguns títulos têm 'N/A' no preço teórico?**", 
-            "Pode ocorrer para títulos muito atípicos ou quando há dados insuficientes para o cálculo. Nestes casos, focamos apenas nos dados observados de mercado."),
-            
-            ("**O dashboard funciona no celular?**", 
-            "Sim! O Streamlit é responsivo e se adapta a telas menores. Acesse pelo navegador do seu smartphone."),
-            
-            ("**É gratuito mesmo?**", 
-            "Sim! Este é um projeto open-source mantido pela comunidade. O código está disponível no GitHub para quem quiser contribuir ou customizar.")
-        ]
-
-        for pergunta, resposta in faq_data:
-            with st.container():
-                st.markdown(f"**{pergunta}**")
-                st.markdown(f"{resposta}")
-                st.markdown("---")
-
-        with st.expander("🚀 **Dicas Avançadas**"):
-        st.markdown("""
-        ### Para usuários mais experientes:
-
-        1. **Compare com outros indicadores** 📊
-        - Observe a relação entre taxas prefixadas e IPCA+
-        - A diferença indica a expectativa de inflação do mercado
-
-        2. **Acompanhe a inclinação da curva** 📈
-        - Curva muito inclinada: mercado espera juros mais altos no futuro
-        - Curva invertida: possível recessão à frente
-
-        3. **Estratégias comuns** 💡
-        - **Buy & Hold**: Compre títulos com boas taxas e leve até o vencimento
-        - **Trading**: Aproveite oportunidades de curto prazo (descontos > 2%)
-        - **Escada de vencimentos**: Diversifique prazos para liquidez periódica
-
-        4. **Monitore títulos com cupom** 💰
-        - IPCA+ com Juros Semestrais pagam a cada 6 meses
-        - Ideal para quem precisa de renda periódica
-        """)
-
-        with st.expander("📱 **Compartilhar e Feedback**"):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("""
-            **Compartilhe este dashboard:**
-            
-                    
-            Ou use os botões:
-            """)
-
-            # Botões de compartilhamento (simulados com links)
-            st.markdown("""
-            <a href="https://twitter.com/intent/tweet?text=Confira%20este%20dashboard%20do%20Tesouro%20Direto%20com%20oportunidades%20automáticas!&url=https://tesouro-dashboard.streamlit.app" target="_blank">
-                <button style="background-color:#1DA1F2; color:white; padding:10px 20px; border:none; border-radius:5px; margin-right:10px;">🐦 Twitter</button>
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tesouro-dashboard.streamlit.app" target="_blank">
-                <button style="background-color:#0077B5; color:white; padding:10px 20px; border:none; border-radius:5px;">💼 LinkedIn</button>
-            </a>
-            """, unsafe_allow_html=True)
-
-            with col2:
-            st.markdown("""
-            **Tem sugestões? Encontrou um bug?**
-
-            Contribua no GitHub:
-            [github.com/daciolimasantos/tesouro-dashboard](https://github.com/daciolimasantos/tesouro-dashboard)
-
-            Ou abra uma issue diretamente:
-            """)
-            st.link_button("🐛 Reportar problema", "https://github.com/daciolimasantos/tesouro-dashboard/issues/new")
-
-            with st.expander("⚠️ **Aviso Legal**"):
-            st.warning("""
-            **IMPORTANTE**: Este dashboard é uma ferramenta de **análise e informação**, não constituindo recomendação de investimento.
-
-            - Os dados podem sofrer atrasos ou inconsistências
-            - Decisões de investimento devem ser baseadas em sua própria análise
-            - Consulte um profissional qualificado antes de investir
-            - Rentabilidade passada não garante resultados futuros
-            """)
-
-            # Estatísticas de uso
+    for pergunta, resposta in faq_data:
+        with st.container():
+            st.markdown(f"**{pergunta}**")
+            st.markdown(f"{resposta}")
             st.markdown("---")
-            st.markdown("### 📊 Estatísticas do Dashboard")
 
-            col1, col2, col3, col4 = st.columns(4)
-            with col1:
-            st.metric("Versão", "2.0.0")
-            with col2:
-            st.metric("Última atualização", datetime.now().strftime("%d/%m/%Y"))
-            with col3:
-            st.metric("Títulos monitorados", len(df) if 'df' in locals() else 18)
-            with col4:
-            st.metric("APIs ativas", "BCB ✅ | Tesouro ⚠️")
-                
+    with st.expander("🚀 **Dicas Avançadas**"):
+    st.markdown("""
+    ### Para usuários mais experientes:
 
+    1. **Compare com outros indicadores** 📊
+    - Observe a relação entre taxas prefixadas e IPCA+
+    - A diferença indica a expectativa de inflação do mercado
 
+    2. **Acompanhe a inclinação da curva** 📈
+    - Curva muito inclinada: mercado espera juros mais altos no futuro
+    - Curva invertida: possível recessão à frente
+
+    3. **Estratégias comuns** 💡
+    - **Buy & Hold**: Compre títulos com boas taxas e leve até o vencimento
+    - **Trading**: Aproveite oportunidades de curto prazo (descontos > 2%)
+    - **Escada de vencimentos**: Diversifique prazos para liquidez periódica
+
+    4. **Monitore títulos com cupom** 💰
+    - IPCA+ com Juros Semestrais pagam a cada 6 meses
+    - Ideal para quem precisa de renda periódica
+    """)
+
+    with st.expander("📱 **Compartilhar e Feedback**"):
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+        **Compartilhe este dashboard:** https://tesouro-dashboard.streamlit.app
+        
+        
+    Ou use os botões:
+    """)
+
+    # Botões de compartilhamento
+    st.markdown("""
+    <a href="https://twitter.com/intent/tweet?text=Confira%20este%20dashboard%20do%20Tesouro%20Direto%20com%20oportunidades%20automáticas!&url=https://tesouro-dashboard.streamlit.app" target="_blank">
+        <button style="background-color:#1DA1F2; color:white; padding:10px 20px; border:none; border-radius:5px; margin-right:10px;">🐦 Twitter</button>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tesouro-dashboard.streamlit.app" target="_blank">
+        <button style="background-color:#0077B5; color:white; padding:10px 20px; border:none; border-radius:5px;">💼 LinkedIn</button>
+    </a>
+    """, unsafe_allow_html=True)
+
+    with col2:
+    st.markdown("""
+    **Tem sugestões? Encontrou um bug?**
+
+    Contribua no GitHub:
+    [github.com/daciolimasantos/tesouro-dashboard](https://github.com/daciolimasantos/tesouro-dashboard)
+
+    Ou abra uma issue diretamente:
+    """)
+    st.link_button("🐛 Reportar problema", "https://github.com/daciolimasantos/tesouro-dashboard/issues/new")
+
+    with st.expander("⚠️ **Aviso Legal**"):
+    st.warning("""
+    **IMPORTANTE**: Este dashboard é uma ferramenta de **análise e informação**, não constituindo recomendação de investimento.
+
+    - Os dados podem sofrer atrasos ou inconsistências
+    - Decisões de investimento devem ser baseadas em sua própria análise
+    - Consulte um profissional qualificado antes de investir
+    - Rentabilidade passada não garante resultados futuros
+    """)
+
+    # Estatísticas de uso
+    st.markdown("---")
+    st.markdown("### 📊 Estatísticas do Dashboard")
+
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+    st.metric("Versão", "2.0.0")
+    with col2:
+    st.metric("Última atualização", datetime.now().strftime("%d/%m/%Y"))
+    with col3:
+    st.metric("Títulos monitorados", len(df) if 'df' in locals() else 18)
+    with col4:
+    st.metric("APIs ativas", "BCB ✅ | Tesouro ⚠️")
 
 # Rodapé
 st.markdown("---")
 st.markdown("""
 <div class='footer'>
-    <p>🔄 Atualizado automaticamente a cada 1 hora • Dados fornecidos pelo Tesouro Direto e Banco Central</p>
-    <p>⚠️ Este é um projeto de código aberto. Não constitui recomendação de investimento.</p>
+<p>🔄 Atualizado automaticamente a cada 1 hora • Dados fornecidos pelo Tesouro Direto e Banco Central</p>
+<p>⚠️ Este é um projeto de código aberto. Não constitui recomendação de investimento.</p>
 </div>
 """, unsafe_allow_html=True)
 
 # Atualização automática
 if auto_refresh:
-    time_since_update = (datetime.now() - ultima_atualizacao).total_seconds() / 60
-    if time_since_update >= 60:
-        st.cache_data.clear()
-        st.rerun()
+time_since_update = (datetime.now() - ultima_atualizacao).total_seconds() / 60
+if time_since_update >= 60:
+st.cache_data.clear()
+st.rerun()
