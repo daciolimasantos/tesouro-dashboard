@@ -1,0 +1,239 @@
+[
+  {
+    "timestamp": "2026-03-19 13:47:30.999976",
+    "total_oportunidades": 5,
+    "oportunidades": [
+      {
+        "titulo": "Tesouro Selic 2027",
+        "data": "2026-03-19 13:47:30.225700",
+        "taxa_atual": 0.11990901571747013,
+        "preco_atual": 804.9658681446869,
+        "preco_teorico": 1000.0,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.19503413185531315,
+            "descricao": "Desconto de 19.50%"
+          }
+        ],
+        "score_geral": 10.195034131855314
+      },
+      {
+        "titulo": "Tesouro IPCA+ 2035",
+        "data": "2026-03-19 13:47:30.225697",
+        "taxa_atual": 0.10527460509039877,
+        "preco_atual": 825.6664099000307,
+        "preco_teorico": 990.4093579866003,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.1663382385859873,
+            "descricao": "Desconto de 16.63%"
+          }
+        ],
+        "score_geral": 10.166338238585988
+      },
+      {
+        "titulo": "Tesouro IPCA+ 2045",
+        "data": "2026-03-19 13:47:30.225699",
+        "taxa_atual": 0.10373028970405263,
+        "preco_atual": 836.3233479065059,
+        "preco_teorico": 980.3243352311995,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.146891168717884,
+            "descricao": "Desconto de 14.69%"
+          }
+        ],
+        "score_geral": 10.146891168717884
+      },
+      {
+        "titulo": "Tesouro Prefixado 2029",
+        "data": "2026-03-19 13:47:30.225694",
+        "taxa_atual": 0.10839890851703751,
+        "preco_atual": 883.7554856564497,
+        "preco_teorico": 995.906315612952,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.11261182723545304,
+            "descricao": "Desconto de 11.26%"
+          }
+        ],
+        "score_geral": 10.112611827235453
+      },
+      {
+        "titulo": "Tesouro Prefixado 2026",
+        "data": "2026-03-19 13:47:30.225687",
+        "taxa_atual": 0.12905837294075093,
+        "preco_atual": 929.5029766302177,
+        "preco_teorico": 998.9899105673177,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.06955719292263814,
+            "descricao": "Desconto de 6.96%"
+          }
+        ],
+        "score_geral": 10.069557192922638
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-03-19 14:14:41.430606",
+    "total_oportunidades": 17,
+    "oportunidades": [
+      {
+        "titulo": "Tesouro IPCA+ 2045",
+        "data": "2026-03-19 14:14:39.517710",
+        "taxa_atual": 0.1195,
+        "preco_atual": 831.12,
+        "preco_teorico": 1494.944488461272,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.4440462462552963,
+            "descricao": "Desconto de 44.40%"
+          }
+        ],
+        "score_geral": 14.440462462552963
+      },
+      {
+        "titulo": "Tesouro IPCA+ Juros 2045",
+        "data": "2026-03-19 14:14:39.517728",
+        "taxa_atual": 0.1297,
+        "preco_atual": 839.78,
+        "preco_teorico": 1491.5409166553504,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.43697153016550633,
+            "descricao": "Desconto de 43.70%"
+          }
+        ],
+        "score_geral": 14.369715301655063
+      },
+      {
+        "titulo": "Tesouro IPCA+ 2035",
+        "data": "2026-03-19 14:14:39.517698",
+        "taxa_atual": 0.1014,
+        "preco_atual": 935.68,
+        "preco_teorico": 1515.427669118181,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.38256373493268275,
+            "descricao": "Desconto de 38.26%"
+          }
+        ],
+        "score_geral": 13.825637349326827
+      },
+      {
+        "titulo": "Tesouro IPCA+ Juros 2037",
+        "data": "2026-03-19 14:14:39.517722",
+        "taxa_atual": 0.1028,
+        "preco_atual": 933.58,
+        "preco_teorico": 1511.7272283177333,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.38244149968847346,
+            "descricao": "Desconto de 38.24%"
+          }
+        ],
+        "score_geral": 13.824414996884734
+      },
+      {
+        "titulo": "Tesouro IPCA+ Juros 2060",
+        "data": "2026-03-19 14:14:39.517734",
+        "taxa_atual": 0.1195,
+        "preco_atual": 906.99,
+        "preco_teorico": 1467.9408884052018,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.38213452110774654,
+            "descricao": "Desconto de 38.21%"
+          }
+        ],
+        "score_geral": 13.821345211077466
+      },
+      {
+        "titulo": "Tesouro IPCA+ 2050",
+        "data": "2026-03-19 14:14:39.517716",
+        "taxa_atual": 0.1023,
+        "preco_atual": 938.85,
+        "preco_teorico": 1492.2230398050274,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.3708380215583125,
+            "descricao": "Desconto de 37.08%"
+          }
+        ],
+        "score_geral": 13.708380215583125
+      },
+      {
+        "titulo": "Tesouro IPCA+ 2040",
+        "data": "2026-03-19 14:14:39.517704",
+        "taxa_atual": 0.105,
+        "preco_atual": 969.44,
+        "preco_teorico": 1506.9915496966435,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.3567050855758629,
+            "descricao": "Desconto de 35.67%"
+          }
+        ],
+        "score_geral": 13.567050855758628
+      },
+      {
+        "titulo": "Tesouro Renda+ 2045",
+        "data": "2026-03-19 14:14:39.517778",
+        "taxa_atual": 0.1216,
+        "preco_atual": 846.53,
+        "preco_teorico": 976.2802699559334,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.1329026857848822,
+            "descricao": "Desconto de 13.29%"
+          }
+        ],
+        "score_geral": 11.329026857848822
+      },
+      {
+        "titulo": "Tesouro Reserva 2029",
+        "data": "2026-03-19 14:14:39.517752",
+        "taxa_atual": 0.1194,
+        "preco_atual": 866.8,
+        "preco_teorico": 996.1855036670515,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.12988093401356626,
+            "descricao": "Desconto de 12.99%"
+          }
+        ],
+        "score_geral": 11.298809340135662
+      },
+      {
+        "titulo": "Tesouro Educa+ 2036",
+        "data": "2026-03-19 14:14:39.517763",
+        "taxa_atual": 0.1184,
+        "preco_atual": 887.13,
+        "preco_teorico": 987.3624929692895,
+        "criterios": [
+          {
+            "tipo": "desconto",
+            "intensidade": 0.10151539448076555,
+            "descricao": "Desconto de 10.15%"
+          }
+        ],
+        "score_geral": 11.015153944807656
+      }
+    ]
+  }
+]

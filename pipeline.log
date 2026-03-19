@@ -1,0 +1,114 @@
+2026-03-19 13:44:17 - __main__ - INFO - ============================================================
+2026-03-19 13:44:17 - __main__ - INFO - INICIANDO PIPELINE COMPLETO
+2026-03-19 13:44:17 - __main__ - INFO - ============================================================
+2026-03-19 13:44:17 - __main__ - INFO - Iniciando etapa de coleta
+2026-03-19 13:44:17 - src.collectors.tesouro_scraper - INFO - Inciando coleta de dados do Tesouro Direto
+2026-03-19 13:44:17 - src.collectors.tesouro_scraper - ERROR - Erro na coleta: 404 Client Error: Not Found for url: https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/796d2059-14e9-44e4-80c9-6d98301f0b40/download/PrecoTaxa.json
+2026-03-19 13:44:17 - src.collectors.bcb_api - INFO - Coletando dados de selic
+2026-03-19 13:44:18 - src.collectors.bcb_api - ERROR - Erro na coleta de selic: 404 Client Error: Not Found for url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.(codigo)/dados?formato=json&dataInicial=17/02/2026&dataFinal=19/03/2026
+2026-03-19 13:44:18 - src.collectors.bcb_api - INFO - Coletando dados de ipca
+2026-03-19 13:44:18 - src.collectors.bcb_api - ERROR - Erro na coleta de ipca: 404 Client Error: Not Found for url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.(codigo)/dados?formato=json&dataInicial=19/03/2025&dataFinal=19/03/2026
+2026-03-19 13:44:18 - __main__ - ERROR - Falha na coleta de dados
+2026-03-19 13:47:29 - __main__ - INFO - ============================================================
+2026-03-19 13:47:29 - __main__ - INFO - INICIANDO PIPELINE COMPLETO
+2026-03-19 13:47:29 - __main__ - INFO - ============================================================
+2026-03-19 13:47:29 - __main__ - INFO - Iniciando etapa de coleta
+2026-03-19 13:47:29 - src.collectors.tesouro_scraper - INFO - Iniciando coleta de dados do Tesouro Direto
+2026-03-19 13:47:30 - src.collectors.tesouro_scraper - ERROR - Erro na coleta: 404 Client Error: Not Found for url: https://www.tesourotransparente.gov.br/ckan/dataset/f0468eac-2b7e-4319-96b3-f092d6f0a5c4/resource/e5f90e3a-8f4d-4c4d-8f7d-1d8e6d8e8d8e/download/Dados_Tesouro_Direto.csv
+2026-03-19 13:47:30 - src.collectors.tesouro_scraper - INFO - Gerando dados simulados para teste
+2026-03-19 13:47:30 - src.collectors.tesouro_scraper - INFO - Gerando dados simulados
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - Coletando dados de selic (código 432)
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - URL: https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=17/02/2026&dataFinal=19/03/2026
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - Dados de selic salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\selic_20260319.csv
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - Coletando dados de ipca (código 433)
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - URL: https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=19/03/2025&dataFinal=19/03/2026
+2026-03-19 13:47:30 - src.collectors.bcb_api - INFO - Dados de ipca salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\ipca_20260319.csv
+2026-03-19 13:47:30 - __main__ - INFO - Iniciando etapa de processamento
+2026-03-19 13:47:30 - src.processors.cleaner - INFO - Limpando dados do Tesouro Direto
+2026-03-19 13:47:30 - src.processors.cleaner - INFO - Dados limpos: 5 registros
+2026-03-19 13:47:30 - __main__ - INFO - Iniciando etapa de análise
+2026-03-19 13:47:30 - src.analyzers.fair_price - INFO - Calculando preços teóricos
+2026-03-19 13:47:30 - src.analyzers.opportunity_detector - INFO - Detectando oportunidades
+2026-03-19 13:47:30 - src.analyzers.opportunity_detector - INFO - Detectadas 5 oportunidades
+2026-03-19 13:47:30 - __main__ - INFO - Iniciando etapa de alertas
+2026-03-19 13:47:31 - __main__ - INFO - Resultados salvos em D:\Programação\Projetos\tesouro-pipeline\data\processed\analise_completa.csv
+2026-03-19 13:47:31 - __main__ - INFO - ============================================================
+2026-03-19 13:47:31 - __main__ - INFO - PIPELINE CONCLUÍDO COM SUCESSO
+2026-03-19 13:47:31 - __main__ - INFO - ============================================================
+2026-03-19 14:09:13 - __main__ - INFO - ============================================================
+2026-03-19 14:09:13 - __main__ - INFO - INICIANDO PIPELINE COMPLETO
+2026-03-19 14:09:13 - __main__ - INFO - ============================================================
+2026-03-19 14:09:13 - __main__ - INFO - Iniciando etapa de coleta completa
+2026-03-19 14:09:13 - src.collectors.tesouro_scraper - INFO - Iniciando coleta de dados do Tesouro Direto (CSV oficial)
+2026-03-19 14:09:13 - src.collectors.tesouro_scraper - INFO - Baixando CSV de investir...
+2026-03-19 14:09:14 - src.collectors.tesouro_scraper - ERROR - Erro ao baixar CSV de investir: 403 Client Error: Forbidden for url: https://www.tesourodireto.com.br/documents/d/guest/rendimento-investir-csv?download=true
+2026-03-19 14:09:14 - src.collectors.tesouro_scraper - INFO - Baixando CSV de resgatar...
+2026-03-19 14:09:14 - src.collectors.tesouro_scraper - ERROR - Erro ao baixar CSV de resgatar: 403 Client Error: Forbidden for url: https://www.tesourodireto.com.br/documents/d/guest/rendimento-resgatar-csv?download=true
+2026-03-19 14:09:14 - src.collectors.tesouro_scraper - ERROR - Falha ao coletar dados das fontes oficiais
+2026-03-19 14:09:14 - src.collectors.tesouro_scraper - INFO - Gerando dados simulados para fallback
+2026-03-19 14:09:14 - src.collectors.bcb_api - INFO - Coletando taxa SELIC...
+2026-03-19 14:09:14 - src.collectors.bcb_api - INFO - Chamando API BCB: https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=17/02/2026&dataFinal=19/03/2026
+2026-03-19 14:09:15 - src.collectors.bcb_api - INFO - Dados BCB salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\bcb_selic_20260319.csv
+2026-03-19 14:09:15 - src.collectors.bcb_api - INFO - Coletando IPCA...
+2026-03-19 14:09:15 - src.collectors.bcb_api - INFO - Chamando API BCB: https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=19/03/2025&dataFinal=19/03/2026
+2026-03-19 14:09:15 - src.collectors.bcb_api - INFO - Dados BCB salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\bcb_ipca_20260319.csv
+2026-03-19 14:09:15 - src.collectors.cupons_scraper - INFO - Coletando dados de cupons semestrais...
+2026-03-19 14:09:15 - src.collectors.cupons_scraper - INFO - Dados de cupons salvos: 422 registros
+2026-03-19 14:09:15 - src.collectors.cupons_scraper - INFO - Coletando dados de vencimentos...
+2026-03-19 14:09:16 - src.collectors.cupons_scraper - ERROR - Erro ao coletar vencimentos: 404 Client Error: Not Found for url: https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/34e34f7a-5d94-4e14-8d5c-0a7b0a7b0a7b/download/Vencimentos.csv
+2026-03-19 14:09:16 - __main__ - INFO - Iniciando etapa de processamento estendida
+2026-03-19 14:09:16 - src.processors.cleaner - INFO - Limpando dados do Tesouro Direto
+2026-03-19 14:09:16 - src.processors.cleaner - INFO - Dados limpos: 18 registros
+2026-03-19 14:09:16 - __main__ - ERROR - Erro no pipeline: 'oportunidade_score'
+2026-03-19 14:14:38 - __main__ - INFO - ============================================================
+2026-03-19 14:14:38 - __main__ - INFO - INICIANDO PIPELINE COMPLETO
+2026-03-19 14:14:38 - __main__ - INFO - ============================================================
+2026-03-19 14:14:38 - __main__ - INFO - Iniciando etapa de coleta completa
+2026-03-19 14:14:38 - src.collectors.tesouro_scraper - INFO - Iniciando coleta de dados do Tesouro Direto (CSV oficial)
+2026-03-19 14:14:38 - src.collectors.tesouro_scraper - INFO - Baixando CSV de investir...
+2026-03-19 14:14:39 - src.collectors.tesouro_scraper - ERROR - Erro ao baixar CSV de investir: 403 Client Error: Forbidden for url: https://www.tesourodireto.com.br/documents/d/guest/rendimento-investir-csv?download=true
+2026-03-19 14:14:39 - src.collectors.tesouro_scraper - INFO - Baixando CSV de resgatar...
+2026-03-19 14:14:39 - src.collectors.tesouro_scraper - ERROR - Erro ao baixar CSV de resgatar: 403 Client Error: Forbidden for url: https://www.tesourodireto.com.br/documents/d/guest/rendimento-resgatar-csv?download=true
+2026-03-19 14:14:39 - src.collectors.tesouro_scraper - ERROR - Falha ao coletar dados das fontes oficiais
+2026-03-19 14:14:39 - src.collectors.tesouro_scraper - INFO - Gerando dados simulados para fallback
+2026-03-19 14:14:39 - src.collectors.bcb_api - INFO - Coletando taxa SELIC...
+2026-03-19 14:14:39 - src.collectors.bcb_api - INFO - Chamando API BCB: https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=17/02/2026&dataFinal=19/03/2026
+2026-03-19 14:14:39 - src.collectors.bcb_api - INFO - Dados BCB salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\bcb_selic_20260319.csv
+2026-03-19 14:14:39 - src.collectors.bcb_api - INFO - Coletando IPCA...
+2026-03-19 14:14:39 - src.collectors.bcb_api - INFO - Chamando API BCB: https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=19/03/2025&dataFinal=19/03/2026
+2026-03-19 14:14:40 - src.collectors.bcb_api - INFO - Dados BCB salvos em D:\Programação\Projetos\tesouro-pipeline\data\raw\bcb_ipca_20260319.csv
+2026-03-19 14:14:40 - src.collectors.cupons_scraper - INFO - Coletando dados de cupons semestrais...
+2026-03-19 14:14:40 - src.collectors.cupons_scraper - ERROR - Erro ao coletar cupons: 404 Client Error: Not Found for url: https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/2a0b9c5d-4e3f-4b8a-9c1d-6e7f8a9b0c1d/download/Cupom.csv
+2026-03-19 14:14:40 - src.collectors.cupons_scraper - INFO - Coletando dados de vencimentos...
+2026-03-19 14:14:41 - src.collectors.cupons_scraper - ERROR - Erro ao coletar vencimentos: 404 Client Error: Not Found for url: https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/3b1c2d3e-5f4a-4c9b-8d2e-7f8a9b0c1d2e/download/Vencimentos.csv
+2026-03-19 14:14:41 - __main__ - INFO - Iniciando etapa de processamento estendida
+2026-03-19 14:14:41 - src.processors.cleaner - INFO - Limpando dados do Tesouro Direto
+2026-03-19 14:14:41 - src.processors.cleaner - INFO - Dados limpos: 18 registros
+2026-03-19 14:14:41 - __main__ - INFO - Processamento concluído: 18 títulos processados
+2026-03-19 14:14:41 - __main__ - INFO - Iniciando etapa de análise
+2026-03-19 14:14:41 - src.analyzers.fair_price - INFO - Calculando preços teóricos
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Prefixado 2026: Invalid value '8.743136608985665' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Prefixado 2029: Invalid value '9.85805534981691' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Prefixado 2032: Invalid value '0.1782829061660017' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ 2035: Invalid value '38.25637349326828' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ 2040: Invalid value '35.67050855758629' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ 2045: Invalid value '44.404624625529635' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ 2050: Invalid value '37.08380215583125' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ Juros 2037: Invalid value '38.244149968847346' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ Juros 2045: Invalid value '43.69715301655063' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro IPCA+ Juros 2060: Invalid value '38.213452110774654' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Selic 2027: Invalid value '7.866914672254829' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Selic 2031: Invalid value '2.8789821717331523' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Reserva 2029: Invalid value '12.988093401356625' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Educa+ 2031: Invalid value '4.4636669135893134' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Educa+ 2036: Invalid value '10.151539448076555' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Educa+ 2041: Invalid value '7.408877968247716' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Renda+ 2045: Invalid value '13.29026857848822' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.fair_price - ERROR - Erro calculando preço para Tesouro Renda+ 2050: Invalid value '4.629430917608532' for dtype 'int64'
+2026-03-19 14:14:41 - src.analyzers.opportunity_detector - INFO - Detectando oportunidades
+2026-03-19 14:14:41 - src.analyzers.opportunity_detector - INFO - Detectadas 17 oportunidades
+2026-03-19 14:14:41 - __main__ - INFO - Iniciando etapa de alertas
+2026-03-19 14:14:41 - __main__ - INFO - Resultados salvos em D:\Programação\Projetos\tesouro-pipeline\data\processed\analise_20260319.csv
+2026-03-19 14:14:41 - __main__ - INFO - ============================================================
+2026-03-19 14:14:41 - __main__ - INFO - PIPELINE CONCLUÍDO COM SUCESSO
+2026-03-19 14:14:41 - __main__ - INFO - ============================================================
