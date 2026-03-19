@@ -588,38 +588,38 @@ with tab5:
             ''', unsafe_allow_html=True)
 
     with col2:
-    st.markdown("""
-    **Tem sugestões? Encontrou um bug?**
+        st.markdown("""
+        **Tem sugestões? Encontrou um bug?**
 
-    Contribua no GitHub:
-    [github.com/daciolimasantos/tesouro-dashboard](https://github.com/daciolimasantos/tesouro-dashboard)
+        Contribua no GitHub:
+        [github.com/daciolimasantos/tesouro-dashboard](https://github.com/daciolimasantos/tesouro-dashboard)
 
-    Ou abra uma issue diretamente:
-    """)
-    st.link_button("🐛 Reportar problema", "https://github.com/daciolimasantos/tesouro-dashboard/issues/new")
+        Ou abra uma issue diretamente:
+        """)
+        st.link_button("🐛 Reportar problema", "https://github.com/daciolimasantos/tesouro-dashboard/issues/new")
 
     with st.expander("⚠️ **Aviso Legal**"):
-    st.warning("""
-    **IMPORTANTE**: Este dashboard é uma ferramenta de **análise e informação**, não constituindo recomendação de investimento.
+        st.warning("""
+        **IMPORTANTE**: Este dashboard é uma ferramenta de **análise e informação**, não constituindo recomendação de investimento.
 
-    - Os dados podem sofrer atrasos ou inconsistências
-    - Decisões de investimento devem ser baseadas em sua própria análise
-    - Consulte um profissional qualificado antes de investir
-    - Rentabilidade passada não garante resultados futuros
-    """)
+        - Os dados podem sofrer atrasos ou inconsistências
+        - Decisões de investimento devem ser baseadas em sua própria análise
+        - Consulte um profissional qualificado antes de investir
+        - Rentabilidade passada não garante resultados futuros
+        """)
 
-    st.markdown("---")
-    st.markdown("### 📊 Estatísticas do Dashboard")
+        st.markdown("---")
+        st.markdown("### 📊 Estatísticas do Dashboard")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-    st.metric("Versão", "2.0.0")
+        st.metric("Versão", "2.0.0")
     with col2:
-    st.metric("Última atualização", datetime.now().strftime("%d/%m/%Y"))
+        st.metric("Última atualização", datetime.now().strftime("%d/%m/%Y"))
     with col3:
-    st.metric("Títulos monitorados", len(df) if 'df' in locals() else 18)
+        st.metric("Títulos monitorados", len(df) if 'df' in locals() else 18)
     with col4:
-    st.metric("APIs ativas", "BCB ✅ | Tesouro ⚠️")
+        st.metric("APIs ativas", "BCB ✅ | Tesouro ⚠️")
 
 # Rodapé
 st.markdown("---")
